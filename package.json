@@ -10,12 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/you21979/node-ripple-account-family.git"
   },
+  "devDependencies": {
+    "ripple-keypairs": ""
+  },
   "dependencies": {
-    "ripple-address-codec": "",
-    "hash.js": "",
     "bn.js": "",
+    "create-hash": "^1.1.3",
     "elliptic": "",
-    "babel-runtime": ""
+    "ripple-address-codec": ""
   },
   "author": "",
   "license": "MIT",
