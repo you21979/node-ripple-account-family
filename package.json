@@ -1,0 +1,26 @@
+{
+  "name": "ripple-account-family",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/you21979/node-ripple-account-family.git"
+  },
+  "dependencies": {
+    "ripple-address-codec": "",
+    "hash.js": "",
+    "bn.js": "",
+    "elliptic": "",
+    "babel-runtime": ""
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/you21979/node-ripple-account-family/issues"
+  },
+  "homepage": "https://github.com/you21979/node-ripple-account-family#readme"
+}
