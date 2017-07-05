@@ -1,12 +1,16 @@
 {
   "name": "ripple-account-family",
   "version": "1.0.0",
-  "description": "",
+  "description": "ripple account family",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
+  "keywords": [
+    "ripple",
+    "wallet"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/you21979/node-ripple-account-family.git"

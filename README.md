@@ -5,3 +5,9 @@
 
 * https://wiki.ripple.com/Account_Family
 
+## original library
+
+this library base on ripple-keypairs
+
+* https://github.com/ripple/ripple-keypairs
+
