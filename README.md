@@ -31,6 +31,10 @@ console.log(rw.derive(0).getInfo())
 console.log(rw.derive(1).getInfo())
 ```
 
+## transaction sign ?
+
+see https://github.com/you21979/node-ripple-sign-keypairs/
+
 ## original library
 
 this library base on ripple-keypairs
