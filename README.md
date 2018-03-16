@@ -5,6 +5,11 @@
 
 * https://wiki.ripple.com/Account_Family
 
+# warning
+
+Except for index number 0, it is incompatible with ripple ecosystem.
+You can not use the ripple ecosystem handling existing ripple secret keys.
+
 
 ## install
 
