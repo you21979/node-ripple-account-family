@@ -3,6 +3,8 @@
 [![Build Status](https://secure.travis-ci.org/you21979/node-ripple-account-family.png?branch=master)](https://travis-ci.org/you21979/node-ripple-account-family)
 [![Coverage Status](https://coveralls.io/repos/github/you21979/node-ripple-account-family/badge.svg?branch=master)](https://coveralls.io/github/you21979/node-ripple-account-family?branch=master)
 
+This software is not guaranteed forever. When using it, please at your own risk.
+
 # warning
 
 Except for index number 0, it is incompatible with ripple ecosystem.
