@@ -8,7 +8,7 @@ export class RootWallet {
     const entropy = decodeSecret(seed)
     this.privateGenerator = createPrivateGenerator(entropy.bytes)
   }
-  derive(accountIndex: number): Wallet{
+  derive(accountIndex: number = 0): Wallet{
     return new Wallet(derivePrivateKey(this.privateGenerator, accountIndex), accountIndex)
   }
   getPublicGenerator(): string{
