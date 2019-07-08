@@ -36,13 +36,18 @@ console.log(rw.derive(0).getInfo())
 console.log(rw.derive(1).getInfo())
 ```
 
-## transaction sign ?
+## transaction sign
 
-see https://github.com/you21979/node-ripple-sign-keypairs/
+```
+const RippleApi = require('ripple-lib').RippleAPI
+const api = new RippleApi();
+const options = { signAs: '' };
+const txJSON = 'preparePayment output...'
 
-## original library
-
-this library base on ripple-keypairs
-
-* https://github.com/ripple/ripple-keypairs
+const seed = "ss7vwFuNi2Zud1ekn68LivP2P7UF1"
+const rw = new RootWallet(seed)
+const keypair = rw.derive(0).getKeyPair()
+const signedTx = api.sign(txJSON, void 0, options, keypair);
+console.log(signedTx)
+```
 
