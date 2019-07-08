@@ -47,7 +47,7 @@ const txJSON = 'preparePayment output...'
 const seed = "ss7vwFuNi2Zud1ekn68LivP2P7UF1"
 const rw = new RootWallet(seed)
 const keypair = rw.derive(0).getKeyPair()
-const signedTx = api.sign(txJSON, void 0, options, keypair);
+const signedTx = api.sign(txJSON, void 0, options, keypair)
 console.log(signedTx)
 ```
 
