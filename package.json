@@ -1,33 +1,54 @@
 {
   "name": "ripple-account-family",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "ripple account family",
-  "main": "index.js",
-  "scripts": {
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
-  },
-  "keywords": [
-    "ripple",
-    "wallet"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "example",
+    "package.json",
+    "README.md"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/you21979/node-ripple-account-family.git"
   },
-  "devDependencies": {
-    "ripple-keypairs": "",
-    "istanbul": "",
-    "coveralls": "",
-    "mocha": ""
+  "engines": {
+    "node": ">=8"
   },
+  "keywords": [
+    "ripple-account-family",
+    "ripple",
+    "wallet"
+  ],
   "dependencies": {
-    "bn.js": "4.11.7",
+    "bn.js": "^5.0.0",
     "create-hash": "^1.1.3",
-    "elliptic": "6.4.0",
-    "ripple-address-codec": "2.0.1"
+    "elliptic": "^6.5.0",
+    "ripple-bs58check": "^2.0.2"
   },
-  "author": "",
+  "devDependencies": {
+    "@types/bn.js": "4.11.5",
+    "@types/create-hash": "^1.2.0",
+    "@types/elliptic": "6.4.9",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^9.6.0",
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.5",
+    "ripple-keypairs": "",
+    "ripple-address-codec": "2.0.1",
+    "typescript": "^3.0.0"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "./node_modules/.bin/tsc -p ./",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha ./dist/test",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+  },
+  "author": "Yuki Akiyama",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/you21979/node-ripple-account-family/issues"
