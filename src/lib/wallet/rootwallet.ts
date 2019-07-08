@@ -1,11 +1,11 @@
-const addressCodec = require("ripple-address-codec")
+import { decodeSecret } from '../misc/address'
 import { derivePrivateKey, createPrivateGenerator, createPublicGenerator } from "../accountfamily"
 import { Wallet } from './wallet'
 
 export class RootWallet {
   private privateGenerator: Buffer
   constructor(seed: string){
-    const entropy: { bytes: Buffer } = addressCodec.decodeSeed(seed)
+    const entropy = decodeSecret(seed)
     this.privateGenerator = createPrivateGenerator(entropy.bytes)
   }
   derive(accountIndex: number): Wallet{

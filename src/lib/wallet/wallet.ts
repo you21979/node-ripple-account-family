@@ -1,10 +1,5 @@
-const addressCodec = require("ripple-address-codec")
 import { privateKeyToPublicKey } from "../accountfamily"
-import { hash160 } from '../crypto/hash'
-
-const publicKeyToAddress = (publicKey: Buffer): string => {
-  return addressCodec.encodeAccountID(hash160(publicKey))
-}
+import { encodeAddress } from '../misc/address'
 
 const convertHexKey = (buffer: Buffer): string => {
   return buffer.toString('hex').toUpperCase()
@@ -23,7 +18,7 @@ export class Wallet{
     const publicKey = privateKeyToPublicKey(privateKey)
     const prvHex = '00' + convertHexKey(privateKey)
     const pubHex = convertHexKey(publicKey)
-    const address = publicKeyToAddress(publicKey)
+    const address = encodeAddress(publicKey)
     this.keyPair = {
         privateKey : prvHex,
         publicKey : pubHex,

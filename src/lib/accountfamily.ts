@@ -1,11 +1,11 @@
 import * as elliptic from 'elliptic';
 import { Sha512 } from './crypto/sha512';
-import BigNum from 'bn.js';
+import BN from 'bn.js';
 
 const secp256k1 = new elliptic.ec('secp256k1');
 
-export const deriveScalar = (bytes: number[] | Buffer, discrim: number | undefined = undefined): BigNum => {
-  const order: BigNum = secp256k1.curve.n;
+export const deriveScalar = (bytes: number[] | Buffer, discrim: number | undefined = undefined): BN => {
+  const order: BN = secp256k1.curve.n;
   for (let i = 0; i <= 0xFFFFFFFF; i++) {
     const hasher = new Sha512().add(bytes);
     if (discrim !== void 0) {
@@ -30,7 +30,7 @@ export const createPublicGenerator = (privateGenerator: Buffer): Buffer => {
 
 export const derivePrivateKey = (privateGenerator: Buffer, accountIndex: number) => {
   return deriveScalar(createPublicGenerator(privateGenerator), accountIndex)
-    .add(new BigNum(privateGenerator))
+    .add(new BN(privateGenerator))
     .mod(secp256k1.curve.n)
     .toBuffer('be', 32)
 }

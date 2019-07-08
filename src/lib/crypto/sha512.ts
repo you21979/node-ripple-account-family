@@ -1,5 +1,5 @@
 import { createHash, Hash } from 'crypto'
-import BigNum from 'bn.js'
+import BN from 'bn.js'
 
 export class Sha512{
   private hash: Hash
@@ -24,8 +24,8 @@ export class Sha512{
   first256(): Buffer{
     return this.finish().slice(0, 32);
   }
-  first256BN(): BigNum{
-    return new BigNum(this.first256())
+  first256BN(): BN{
+    return new BN(this.first256())
   }
 }
 
