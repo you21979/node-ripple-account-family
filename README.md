@@ -3,8 +3,6 @@
 [![Build Status](https://secure.travis-ci.org/you21979/node-ripple-account-family.png?branch=master)](https://travis-ci.org/you21979/node-ripple-account-family)
 [![Coverage Status](https://coveralls.io/repos/github/you21979/node-ripple-account-family/badge.svg?branch=master)](https://coveralls.io/github/you21979/node-ripple-account-family?branch=master)
 
-* https://wiki.ripple.com/Account_Family
-
 # warning
 
 Except for index number 0, it is incompatible with ripple ecosystem.
@@ -38,7 +36,11 @@ console.log(rw.derive(1).getInfo())
 
 ## transaction sign
 
+* Use the signature function provided with RIPPLE-LIB
+
+
 ```
+const RootWallet = require("ripple-account-family").RootWallet
 const RippleApi = require('ripple-lib').RippleAPI
 const api = new RippleApi();
 const options = { signAs: '' };
@@ -49,5 +51,15 @@ const rw = new RootWallet(seed)
 const keypair = rw.derive(0).getKeyPair()
 const signedTx = api.sign(txJSON, void 0, options, keypair)
 console.log(signedTx)
+```
+
+## generate seed
+
+* This library provides seed creation functions, but use the official generation logic.
+
+```
+const generateSeed = require("ripple-account-family").generageSeed
+const seed = generateSeed()
+console.log(seed)
 ```
 
