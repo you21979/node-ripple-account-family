@@ -1,6 +1,6 @@
 {
   "name": "ripple-account-family",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "ripple account family",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
