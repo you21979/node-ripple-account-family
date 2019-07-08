@@ -1,6 +1,7 @@
 import * as assert from 'assert'
 import { RootWallet, ColdWallet } from '..'
 import { decodeAddress, encodeAddress, decodeSecret, encodeSecret } from '../lib/misc/address'
+import { generateSeed } from '../lib/misc/seed'
 const keypair = require('ripple-keypairs')
 const codec = require('ripple-address-codec')
 
@@ -79,5 +80,10 @@ describe('test', function () {
     for(let i = 0; i<100; ++i){
       assert.equal(rw.derive(i).getAddress(), cw.getAddress(i))
     }
+  })
+  it('seed compatible test', ()=> {
+    const ans = codec.decodeSeed(generateSeed())
+    assert.equal(ans.version, 33)
+    assert.equal(ans.type, 'secp256k1')
   })
 })
