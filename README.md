@@ -60,7 +60,7 @@ console.log(signedTx)
 * This library provides seed creation functions, but use the official generation logic.
 
 ```
-const generateSeed = require("ripple-account-family").generageSeed
+const generateSeed = require("ripple-account-family").generateSeed
 const seed = generateSeed()
 console.log(seed)
 ```
