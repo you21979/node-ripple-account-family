@@ -14,10 +14,10 @@ export interface IDecode {
 
 type DecodeBase58Tuple = [number, Buffer]
 
-const publicKeyToAddress = (version: number, data: Buffer): string => {
+const publicKeyToAddress = (version: number, publieKey: Buffer): string => {
   const payload = Buffer.allocUnsafe(20 + 1)
   payload.writeUInt8(version, 0)
-  const hash = hash160(data)
+  const hash = hash160(publieKey)
   hash.copy(payload, 1)
   return bs58check.encode(payload)
 }
