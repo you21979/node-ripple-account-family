@@ -1,24 +1,34 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
     "target": "ES5",
-    "rootDir": "./src",
+    "module": "commonjs",
     "outDir": "./dist",
-    "noImplicitAny": true,
-    "sourceMap": false,
-    "removeComments": false,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "strict": true,
-    "lib":[
+    "declaration": true,
+    "rootDir": "./src",
+    "types": [
+      "node",
+      "jest"
     ],
-    "declaration": true
+    "lib": [
+    ],
+    "allowJs": false,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false
   },
-  "exclude": [
-    "node_modules",
-    "src/**/*.spec.*"
-  ],
   "include": [
-    "src/**/*"
+      "src/**/*.ts"
+  ],
+  "exclude": [
+      "**/*.test.ts",
+      "node_modules/**/*"
   ]
 }

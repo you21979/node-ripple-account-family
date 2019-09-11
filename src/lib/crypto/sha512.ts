@@ -1,34 +1,28 @@
-import { createHash, Hash } from 'crypto'
-import BN from 'bn.js'
+import { createHash, Hash } from 'crypto';
 
-export class Sha512{
-  private hash: Hash
-  constructor(){
+export class Sha512 {
+  private readonly hash: Hash;
+  constructor() {
     this.hash = createHash('sha512');
   }
-  add(bytes: number[] | Buffer): Sha512{
-    if(bytes instanceof Array){
-        bytes = Buffer.from(bytes)
-    }
+  add(bytes: Buffer): Sha512 {
     this.hash.update(bytes);
     return this;
   }
-  addU32(i: number): Sha512{
-    const u32 = [i >>> 24 & 0xFF, i >>> 16 & 0xFF, i >>> 8 & 0xFF, i & 0xFF]
-    this.add(u32);
+  addU32(i: number): Sha512 {
+    const u32 = [
+      (i >>> 24) & 0xff,
+      (i >>> 16) & 0xff,
+      (i >>> 8) & 0xff,
+      i & 0xff,
+    ];
+    this.add(Buffer.from(u32));
     return this;
   }
-  finish(): Buffer{
+  finish(): Buffer {
     return this.hash.digest();
   }
-  first256(): Buffer{
+  first256(): Buffer {
     return this.finish().slice(0, 32);
   }
-  first256BN(): BN{
-    return new BN(this.first256())
-  }
 }
-
-
-
-
