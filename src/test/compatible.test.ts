@@ -1,4 +1,4 @@
-import { RootWallet, ColdWallet } from '..';
+import { RootWallet } from '..';
 import {
   decodeAddress,
   encodeAddress,
