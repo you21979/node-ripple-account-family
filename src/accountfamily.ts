@@ -15,10 +15,8 @@ export const createPrivateGenerator = (seed: Buffer): Buffer => {
 };
 
 export const createPublicGenerator = (privateGenerator: Buffer): Buffer => {
-  const pubGen = secp256k1.g
-    .mul(privateGenerator)
-    .encodeCompressed('hex') as string;
-  return Buffer.from(pubGen, 'hex');
+  const pubGen = secp256k1.g.mul(privateGenerator).encodeCompressed();
+  return Buffer.from(pubGen);
 };
 
 export const derivePrivateKey = (
@@ -42,12 +40,12 @@ export const derivePublicKey = (
   const scalar = secp256k1CKD(publicGenerator, accountIndex);
   const point = secp256k1.g.mul(scalar);
   const offset = rootPubPoint.add(point);
-  const pubkey = offset.encodeCompressed('hex') as string;
-  return Buffer.from(pubkey, 'hex');
+  const pubkey = offset.encodeCompressed();
+  return Buffer.from(pubkey);
 };
 
 export const privateKeyToPublicKey = (privateKey: Buffer): Buffer => {
   const keypair = secp256k1.keyFromPrivate(privateKey);
-  const pubkey = keypair.getPublic().encodeCompressed('hex') as string;
-  return Buffer.from(pubkey, 'hex');
+  const pubkey = keypair.getPublic().encodeCompressed();
+  return Buffer.from(pubkey);
 };

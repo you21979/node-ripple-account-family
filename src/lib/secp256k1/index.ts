@@ -7,11 +7,13 @@ type BinaryLike = Buffer | string | BN | IPoint;
 interface IPoint {
   add: (bytes: BinaryLike) => IPoint;
   mul: (bytes: BinaryLike) => IPoint;
-  encodeCompressed: (enc?: 'hex') => string | number[];
+  encodeCompressed(): number[];
+  encodeCompressed(enc: 'hex'): string;
 }
 
 interface IPublicKey {
-  encodeCompressed: (enc?: 'hex') => string | number[];
+  encodeCompressed(): number[];
+  encodeCompressed(enc: 'hex'): string;
 }
 
 interface IKeyPair {
