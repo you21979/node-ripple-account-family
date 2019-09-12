@@ -34,13 +34,14 @@
     "@types/jest": "24.0.12",
     "@types/bn.js": "4.11.5",
     "@types/create-hash": "^1.2.0",
-    "@types/node": "^9.6.0",
+    "@types/node": "^12.7.5",
     "ripple-keypairs": "0.11.0",
     "ripple-address-codec": "3.0.4",
     "prettier": "1.17.0",
     "jest": "24.8.0",
     "ts-jest": "24.0.2",
-    "typescript": "^3.0.0"
+    "coveralls": "^3.0.0",
+    "typescript": "^3.6.0"
   },
   "scripts": {
     "prepare": "npm run build",
@@ -49,6 +50,7 @@
     "prettier": "prettier 'src/**/*.ts'",
     "coverage": "npm run unit -- --coverage",
     "unit": "jest --config=jest.json --runInBand",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "test": "npm run coverage",
     "tsc": "tsc -p tsconfig.json"
   },
