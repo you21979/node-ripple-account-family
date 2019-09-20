@@ -1,13 +1,13 @@
-import createHash from 'create-hash';
+import { hashFunctionTable } from './hash_function_table';
 
 export const ripemd160 = (buffer: Buffer): Buffer => {
-  return createHash('rmd160')
+  return hashFunctionTable.ripemd160()
     .update(buffer)
     .digest();
 };
 
 export const sha256 = (buffer: Buffer): Buffer => {
-  return createHash('sha256')
+  return hashFunctionTable.sha256()
     .update(buffer)
     .digest();
 };

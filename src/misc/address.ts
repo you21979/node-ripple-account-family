@@ -8,7 +8,7 @@ export type VersionIdentify = VersionIdentifyAddress | VersionIdentifySecret;
 export const NetworkParameter = {
   p2pkh: 0x00,
   secp256k1: 0x21,
-  ed25519: 0xff,
+  ed25519: 0x01e14b,
 };
 
 export interface IDecode {

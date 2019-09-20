@@ -1,4 +1,4 @@
-import { secp256k1 } from './lib/secp256k1';
+import { secp256k1 } from './lib/crypto/secp256k1';
 import BN from 'bn.js';
 import { CKD } from './ckd';
 
