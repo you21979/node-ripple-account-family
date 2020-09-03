@@ -16,7 +16,7 @@
     "url": "git+https://github.com/you21979/node-ripple-account-family.git"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "keywords": [
     "ripple-account-family",
